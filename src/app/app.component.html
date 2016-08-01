@@ -3,22 +3,59 @@
 </h1>
 
 <aside>
-  <app-attendees></app-attendees>
-  <br>
- 
-  <form action="">
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-danger">
-        <input type="radio" name="red" id="option1" autocomplete="off" checked> Red Apple
-      </label>
-      <label class="btn btn-success">
-        <input type="radio" name="green" id="option1" autocomplete="off"> Green Apple
-      </label>
+  <div class="margin-20">
+    <h4 class="centered">New Apple</h4>
+    <hr>
+  </div>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+    <!--Date-->
+    <div class="form-group col-md-9">
+      <label>Date:</label>
+      <input type="date" class="form-control" formControlName="date">
+      <small *ngIf="!myForm.controls.date.valid" class="text-danger">
+        Date is required 
+      </small>
     </div>
-    <br>
-    <button class="btn btn-outline-success apple-submit" type="submit" (click)="addApple()">Submit</button>
-  </form>
+    <!--Color-->
+    <div class="clearfix"></div>
+    <div class="form-group col-md-8">
+      <label>Apple Color:</label>
+      <input list="colors" class="form-control" formControlName="color">
+      <datalist id="colors">
+        <option value="Red Apple">
+        <option value="Green Apple">
+      </datalist>
+      <small *ngIf="!myForm.controls.color.valid" class="text-danger">
+        A apple color is required 
+      </small>
+    </div>
+    <!--Attendees-->
+    <div formArrayName="attendees">
+      <div *ngFor="let address of myForm.controls.attendees.controls; let i=index" class="panel panel-default">
+        <div [formGroupName]="i">
+          <div class="form-group col-md-6">
+            <label>Attendee {{i +1 }}: </label>
+            <button class="btn btn-outline-danger btn-tiny" type="submit" *ngIf="myForm.controls.attendees.controls.length > 2"(click)="removeAttendee(i)">X</button>
+            <input type="text" class="form-control" formControlName="name">
+            <small [hidden]="myForm.controls.attendees.controls[i].controls.name.valid" class="text-danger">
+                Name is required
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div>
+      <a href="#" (click)="addAttendee()">
+        Add attendee +
+      </a>
+    </div>
 
+    <div class="margin-20">
+      <button type="submit" class="btn btn-primary center-btn" [disabled]="!myForm.valid">Submit</button>
+    </div>
+    <div class="clearfix"></div>
+  </form>
 </aside>
 
 <div class="bBoard">

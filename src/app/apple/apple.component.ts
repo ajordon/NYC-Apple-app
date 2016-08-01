@@ -1,5 +1,5 @@
-import { Component, Input} from '@angular/core';
-import { Apple } from './apple.model';
+import { Component } from '@angular/core';
+import { Apple } from '../apple.interface';
 
 @Component({
   moduleId: module.id,
@@ -8,11 +8,11 @@ import { Apple } from './apple.model';
   styleUrls: ['apple.component.css']
 })
 export class AppleComponent {
-  @Input() apples: Apple;
+  // @Input() apples: Apple;
   constructor() { }
 
-  addApple() {
-    // this.apples.push({attendees: this.attendees, color: this.color, date: this.date});
+  getApples() {
+    // Get all apples from the API
   }
 
   totalApple() {

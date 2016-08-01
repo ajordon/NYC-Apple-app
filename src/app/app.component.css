@@ -1,3 +1,7 @@
+body {
+    font-size: 16px;
+}
+
 h1 {
     color: #359;
     margin: 0 auto;
@@ -17,4 +21,37 @@ aside {
 
 .apple-submit {
     margin: 0 auto;
+}
+
+.margin-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+a, input {
+    font-size: .8em;
+}
+
+label {
+    font-size: .9em;
+}
+
+.centered {
+    text-align: center;
+}
+
+.center-btn {
+    margin-left: 40%;
+}
+
+.btn-tiny {
+    font-size: .5em;
+    padding: .25em .5em;
+    margin-left: .9em;
+}
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
 }
