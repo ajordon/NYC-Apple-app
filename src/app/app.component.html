@@ -1,3 +1,26 @@
 <h1>
   {{title}}
 </h1>
+
+<aside>
+  <app-attendees></app-attendees>
+  <br>
+ 
+  <form action="">
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-danger">
+        <input type="radio" name="red" id="option1" autocomplete="off" checked> Red Apple
+      </label>
+      <label class="btn btn-success">
+        <input type="radio" name="green" id="option1" autocomplete="off"> Green Apple
+      </label>
+    </div>
+    <br>
+    <button class="btn btn-outline-success apple-submit" type="submit" (click)="addApple()">Submit</button>
+  </form>
+
+</aside>
+
+<div class="bBoard">
+  <app-apple></app-apple>
+</div>

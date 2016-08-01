@@ -1,0 +1,20 @@
+h1 {
+    color: #359;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+}
+
+aside {
+    float: left;
+    width: 28%;
+    padding-left: 10px;
+}
+
+.attend-submit {
+    margin-left: 20px
+}
+
+.apple-submit {
+    margin: 0 auto;
+}

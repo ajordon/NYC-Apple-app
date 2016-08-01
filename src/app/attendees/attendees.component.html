@@ -1,0 +1,14 @@
+<h3>Attendees</h3>
+<hr>
+<form (submit)="addAttendee()">
+  <input class="nameField" type="text" name="attendee[name]" placeholder="Enter in a name" [(ngModel)]="name"><br>
+  <button class="btn btn-outline-success btn-sm attend-submit">Add</button>
+</form>
+<hr>
+<div>
+<ul class="attendees">
+    <li *ngFor="let attendee of attendees"
+      (click)="onSelect(attendee)">{{attendee.name}}
+    <button class="btn btn-outline-danger" type="submit" (click)="deleteAttendee(attendee.name)">X</button>
+    </li>
+</ul>
