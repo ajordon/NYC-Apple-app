@@ -1,7 +1,8 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { AppComponent, environment } from './app/';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
+
+import { AppComponent, environment } from './app/';
+import { enableProdMode } from '@angular/core';
 
 if (environment.production) {
   enableProdMode();
@@ -10,4 +11,5 @@ if (environment.production) {
 bootstrap(AppComponent, [
   disableDeprecatedForms(), // disable deprecated forms
   provideForms(), // enable new forms module 
-]);
+])
+.catch((err: any) => console.error(err));

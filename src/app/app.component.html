@@ -35,7 +35,7 @@
         <div [formGroupName]="i">
           <div class="form-group col-md-6">
             <label>Attendee {{i +1 }}: </label>
-            <button class="btn btn-outline-danger btn-tiny" type="submit" *ngIf="myForm.controls.attendees.controls.length > 2"(click)="removeAttendee(i)">X</button>
+            <button class="btn btn-outline-danger btn-tiny" type="submit" *ngIf="myForm.controls.attendees.controls.length > 2" (click)="removeAttendee(i)">X</button>
             <input type="text" class="form-control" formControlName="name">
             <small [hidden]="myForm.controls.attendees.controls[i].controls.name.valid" class="text-danger">
                 Name is required
@@ -58,6 +58,5 @@
   </form>
 </aside>
 
-<div class="bBoard">
-  <app-apple></app-apple>
-</div>
+<app-apple></app-apple>
+

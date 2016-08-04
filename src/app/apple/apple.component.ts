@@ -1,29 +1,44 @@
-import { Component } from '@angular/core';
-import { Apple } from '../apple.interface';
+import { Component, OnInit } from '@angular/core';
+import { Apple } from './apple.interface';
+import { AppleService } from './apple.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-apple',
   templateUrl: 'apple.component.html',
-  styleUrls: ['apple.component.css']
+  styleUrls: ['apple.component.css'],
+  providers: [AppleService]
 })
-export class AppleComponent {
-  // @Input() apples: Apple;
-  constructor() { }
+export class AppleComponent implements OnInit {
+  apples: Apple[];
+  constructor(private appleService: AppleService) { }
 
-  getApples() {
-    // Get all apples from the API
+  ngOnInit() {
+    this.apples = this.appleService.getApples();
   }
 
-  totalApple() {
-    // return this.apples.length + 1;
+  addApple(apple) {
+    this.appleService.addApple(apple);
   }
 
-  deleteApple(appleId) {
-    // for (let i = 0; i < this.apples.length; i++) {
-    //   if (this.apples[i].id === appleId) {
-    //     this.apples.splice(i, 1);
-    //   }
-    // }
+  currentMonth() {
+    let date = new Date();
+    return date;
+  }
+
+  totalApples() {
+    return this.appleService.totalApples();
+  }
+
+  getStyle(apple) {
+    if ( apple.color === 'Green Apple') {
+      return '#5EF272';
+    } else {
+      return '#F24C4B';
+    }
+  }
+
+  deleteApple(apple) {
+    this.appleService.deleteApple(apple);
   }
 }

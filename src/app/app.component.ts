@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/common';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 
-import { Apple } from './apple.interface';
+import { Apple } from './apple/apple.interface';
+import { AppleService } from './apple/apple.service';
 import { AppleComponent } from './apple/apple.component';
 
 @Component({
@@ -10,7 +11,8 @@ import { AppleComponent } from './apple/apple.component';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [AppleComponent, REACTIVE_FORM_DIRECTIVES]
+  directives: [REACTIVE_FORM_DIRECTIVES, AppleComponent],
+  providers: [AppleService]
 })
 export class AppComponent implements OnInit {
   title = 'NYC Apple Report';
@@ -47,9 +49,13 @@ export class AppComponent implements OnInit {
 
   save(model: Apple) {
     // call API to save
-    // ...
-    // Some command to store this apple data
+    // Some command to store this new apple
+    // model.date = model.date.replace(/-/, '/').replace(/-/, '/');
+    const date = <FormArray>this.myForm.controls['date'];
     console.log(model);
-    this.ngOnInit();
+    console.log(date);
+    // console.log(control);
+    // console.log(control.attendees);
+    // this.AppleComponent.addApple(model);
   }
 }

@@ -3,14 +3,6 @@
   padding:0;
 }
 
-.bBoard {
-  float: right;
-  border: 1.5px solid black;
-  border-radius: 10px;
-  width: 70%;
-  /*background-color: #666;*/
-}
-
 body{
   font-family:arial,sans-serif;
   font-size:100%;
@@ -20,27 +12,26 @@ body{
 }
 
 h2,p{
-  font-size:100%;
-  font-weight:normal;
+  font-size:90%;
+  font-weight: normal;
 }
 
 ul,li{
-  list-style:none;
+  list-style: none;
 }
 
 ul{
-  overflow:hidden;
-  padding:3em;
+  overflow: hidden;
+  padding: 2em;
 }
 
 ul li a{
   text-decoration:none;
   color:#000;
-  background:#ffc;
   display:block;
-  height:10em;
-  width:10em;
-  padding:1em;
+  height: 10em;
+  width: 12.5em;
+  padding:.5em;
 }
 
 ul li{
@@ -83,4 +74,39 @@ ul li a:hover,ul li a:focus{
 
 .btn-danger {
   float: right;
+}
+
+.attendee-name {
+  padding: 1px;
+  font-size: .9em;
+}
+
+.date-header {
+  padding-bottom: 5px;  
+  font-size: .8em;
+  font-weight: bold;
+  float: left;
+}
+
+.dark {
+  height: 2px;
+  color: #000;
+}
+
+.bBoard {
+  float: right;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 1080px;
+  /*background-color: #666;*/
+}
+
+.apple-count {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
 }
