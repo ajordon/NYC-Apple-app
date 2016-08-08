@@ -1,5 +1,5 @@
 export interface Apple {
-  id: number;
+  id?: number;
   date: string;
   color: string;
   attendees: string[];

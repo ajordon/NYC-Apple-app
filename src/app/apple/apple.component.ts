@@ -17,10 +17,6 @@ export class AppleComponent implements OnInit {
     this.apples = this.appleService.getApples();
   }
 
-  addApple(apple) {
-    this.appleService.addApple(apple);
-  }
-
   currentMonth() {
     let date = new Date();
     return date;

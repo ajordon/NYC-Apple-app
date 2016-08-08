@@ -18,7 +18,9 @@ export class AppComponent implements OnInit {
   title = 'NYC Apple Report';
   public myForm: FormGroup;
 
-  constructor(private _fb: FormBuilder) { }
+  constructor(
+    private _fb: FormBuilder,
+    private appleService: AppleService) { }
 
   ngOnInit() {
     this.myForm = this._fb.group({
@@ -50,12 +52,7 @@ export class AppComponent implements OnInit {
   save(model: Apple) {
     // call API to save
     // Some command to store this new apple
-    // model.date = model.date.replace(/-/, '/').replace(/-/, '/');
-    const date = <FormArray>this.myForm.controls['date'];
-    console.log(model);
-    console.log(date);
-    // console.log(control);
-    // console.log(control.attendees);
-    // this.AppleComponent.addApple(model);
+    this.appleService.addApple(model);
+    // this.ngOnInit();
   }
 }
