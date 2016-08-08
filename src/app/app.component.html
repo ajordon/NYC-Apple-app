@@ -31,10 +31,11 @@
     </div>
     <!----Attendees---->
     <div formArrayName="attendees">
-      <div *ngFor="let attendees of myForm.controls.attendees.controls; let i=index" class="panel panel-default">
+      <div *ngFor="let attendees of myForm.controls.attendees.controls; let i=index">
         <div [formGroupName]="i">
           <div class="form-group col-md-6">
             <label>Attendee {{i +1 }}: </label>
+            <!-- Attendee header, show remove button when more than one 2 people attending available -->
             <button class="btn btn-outline-danger btn-tiny" type="submit" *ngIf="myForm.controls.attendees.controls.length > 2" (click)="removeAttendee(i)">X</button>
             <input type="text" class="form-control" formControlName="name">
             <small [hidden]="myForm.controls.attendees.controls[i].controls.name.valid" class="text-danger">

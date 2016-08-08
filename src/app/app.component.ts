@@ -53,6 +53,5 @@ export class AppComponent implements OnInit {
     // call API to save
     // Some command to store this new apple
     this.appleService.addApple(model);
-    // this.ngOnInit();
   }
 }

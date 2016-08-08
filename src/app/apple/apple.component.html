@@ -8,7 +8,7 @@
           <button class="btn btn-danger btn-sm" type="submit" (click)="deleteApple(apple)">x</button>
           <div class="clearfix"></div>
           <hr class="dark">
-          <p *ngFor="let person of apple.attendees" class="attendee-name">{{person}}</p>
+          <p *ngFor="let person of apple.attendees" class="attendee-name">{{person.name}}</p>
         </a>
       </li>
     </div>
